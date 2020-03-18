@@ -1,0 +1,45 @@
+.about-container {
+    padding-top: 10px;
+}
+
+.about-row {
+    padding: 20px 0;
+}
+
+.about-content {
+    text-align: left;
+    font-size: 1.3em;
+}
+
+.expertise-row {
+    padding-bottom: 20px;
+}
+
+.expertise-key {
+    text-align: right;
+    font-weight: 700;
+}
+
+.img-me {
+    transition: filter 1s;
+}
+
+.img-me:hover,
+.img-me:active {
+    filter: brightness(150%);
+    transition: filter 0.75s;
+}
+
+.about-info {
+    margin: 30px;
+    font-size: 1.3em;
+}
+
+.about-info > p {
+    line-height: 0.75;
+}
+
+.img-div {
+    display: block;
+    overflow: auto;
+}

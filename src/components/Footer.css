@@ -1,0 +1,25 @@
+.fa-clickable {
+    color: #444;
+    transition: color 2s;
+}
+
+.fa-clickable:hover {
+    text-decoration: none;
+    transition: color 0.1s;
+}
+
+.fa-email:hover {
+    color: #D44638;
+}
+
+.fa-twitter:hover {
+    color: #1DA1F2;
+}
+
+.fa-linkedin:hover {
+    color: #0077B5;
+}
+
+.fa-github:hover {
+    color: #000;
+}
