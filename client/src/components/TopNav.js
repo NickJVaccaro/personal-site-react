@@ -9,6 +9,7 @@ export default function TopNav() {
             <Nav>
                 <Link to="/about" className="nav-link">About</Link>
                 <Link to="/projects" className="nav-link">Projects</Link>
+                <Link to="/blog" className="nav-link">Blog</Link>
                 <Link to="/now" className="nav-link">Now</Link>
             </Nav>
         </Navbar>

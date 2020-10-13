@@ -16,7 +16,7 @@ export default function Footer() {
     ];
 
     const iconHtml = contactData.map((data) => 
-        <Col>
+        <Col key={data.href}>
             <a href={data.href} className={'fa-' + data.class + ' fa-clickable'}>
                 <FontAwesomeIcon icon={data.icon} size="3x" />
             </a>
