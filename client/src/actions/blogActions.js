@@ -15,3 +15,10 @@ export const getBlogPost = async (id, dispatch) => {
         payload: res.data
     });
 }
+
+export const calculateReadingTime = (content) => {
+    if(!content) return '? minutes';
+    let minutes = content.split(' ').length / 130;
+    if (minutes < 1) minutes = 1;
+    return minutes + ' minute' + (minutes > 1 ? 's' : '');
+}

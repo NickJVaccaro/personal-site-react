@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import {Container, Row, Col} from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
-import { getBlogPost } from '../actions/blogActions';
+import { getBlogPost, calculateReadingTime } from '../actions/blogActions';
 import { useParams } from 'react-router-dom';
 
 import './Blog.css';
@@ -20,7 +20,6 @@ export default function Post () {
     const convertToMarkdown = content => {
         if(!content) return;
         let result = md.render(content);
-        console.log('result', result);
         return {__html: result};
     }
 
@@ -29,13 +28,15 @@ export default function Post () {
             <Row>
                 <Col>
                     <h1>{post.title}</h1>
-                    <p className="text-center post-date">Reading Time: blah · Published: {new Date(post.date).toLocaleDateString()}</p>
+                    <p className="text-center post-date">
+                        Reading Time: {calculateReadingTime(post.content)} · 
+                        Published: {new Date(post.date).toLocaleDateString()}
+                    </p>
                     <hr/>
                 </Col>
             </Row>
             <Row>
                 <Col dangerouslySetInnerHTML={convertToMarkdown(post.content)}>
-                    {/* <p className="post-content">{convertToMarkdown(post.content)}</p> */}
                 </Col>
             </Row>
         </Container>

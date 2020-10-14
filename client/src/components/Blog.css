@@ -9,6 +9,10 @@
     margin-bottom: 2em;
 }
 
+.post-image {
+    max-width: 100%;
+}
+
 .post-title {
     font-size: 2em;
     font-weight: 500;

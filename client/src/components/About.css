@@ -7,6 +7,11 @@
     font-weight: 700;
 }
 
+.expertise-key > p,
+.expertise-value > p {
+    margin: 0;
+}
+
 .img-me {
     transition: filter 1s;
 }

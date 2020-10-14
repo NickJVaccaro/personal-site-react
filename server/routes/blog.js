@@ -4,7 +4,7 @@ var db = require('../data/mariaConnection');
 
 router.get('/', async (req, res) => {
     const conn = await db.getConnection();
-    const rows = await conn.query('SELECT * from posts');
+    const rows = await conn.query('SELECT * from posts ORDER BY date DESC');
     conn.release();
     res.send(rows);
 });
