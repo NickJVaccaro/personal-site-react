@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import {Container, Row, Col} from 'react-bootstrap';
+import { Container, Row, Col } from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
 import { getBlogPost, calculateReadingTime } from '../actions/blogActions';
 import { useParams } from 'react-router-dom';
@@ -36,7 +36,7 @@ export default function Post () {
                 </Col>
             </Row>
             <Row>
-                <Col dangerouslySetInnerHTML={convertToMarkdown(post.content)}>
+                <Col dangerouslySetInnerHTML={convertToMarkdown(post.content)} className="post-content">
                 </Col>
             </Row>
         </Container>
