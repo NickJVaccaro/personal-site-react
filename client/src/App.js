@@ -19,7 +19,7 @@ import Post from './components/Post';
 import Footer from './components/Footer';
 
 const setAxios = () => {
-  axios.defaults.baseURL = 'http://localhost:3000';
+  axios.defaults.baseURL = 'https://server.nickvaccaro.com';
 }
 setAxios();
 
