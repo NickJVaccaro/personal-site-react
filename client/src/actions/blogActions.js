@@ -20,5 +20,6 @@ export const calculateReadingTime = (content) => {
     if(!content) return '? minutes';
     let minutes = content.split(' ').length / 130;
     if (minutes < 1) minutes = 1;
+    else minutes = Math.ceil(minutes);
     return minutes + ' minute' + (minutes > 1 ? 's' : '');
 }
