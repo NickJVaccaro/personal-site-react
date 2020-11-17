@@ -3,7 +3,7 @@ const initialState = {
     currentPost: {}
 }
 
-export default function (state = initialState, action) {
+export default function blogReducer (state = initialState, action) {
     switch(action.type) {
         case 'GET_POSTS':
             return {

@@ -4,7 +4,7 @@ const initialState = {
     updated: Date.now()
 }
 
-export default function (state = initialState, action) {
+export default function nowReducer (state = initialState, action) {
     switch(action.type) {
         case 'GET_NOW':
             return {
