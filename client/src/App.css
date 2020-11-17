@@ -1,5 +1,23 @@
-.App {
+body, h1, h2, p, li {
+  color: #555;
+}
+
+h1, h2 {
+  margin-top: 0.3em!important;
   text-align: center;
+}
+
+.post-content > h1,
+.post-content > h2 {
+  text-align: left;
+}
+
+body, p, li {
+  font-size: 1.3em;
+}
+
+ul {
+  list-style: square;
 }
 
 .App-logo {
