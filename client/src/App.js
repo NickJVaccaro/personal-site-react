@@ -2,7 +2,7 @@ import React from 'react';
 import axios from 'axios';
 
 // Routing
-import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom';
+import { HashRouter as Router, Switch, Route, Redirect } from 'react-router-dom';
 
 // Redux
 import { Provider } from 'react-redux';

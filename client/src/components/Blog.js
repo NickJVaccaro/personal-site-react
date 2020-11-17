@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import {Container, Row, Col} from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
 import { getBlogPosts, calculateReadingTime } from '../actions/blogActions';
@@ -27,7 +28,7 @@ export default function Blog () {
                         <img className="post-image" src={post.excerpt_image} alt={post.image_alt} />
                     </Col>
                     <Col>
-                        <a href={'post/' + post.id} className="post-title">{post.title}</a>
+                        <Link to={'post/' + post.id} className="post-title">{post.title}</Link>
                         <p className="post-date">
                             Reading Time: {calculateReadingTime(post.content)} ·
                             Published: {new Date(post.date).toLocaleDateString()}
