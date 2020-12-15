@@ -31,6 +31,7 @@ export default function Footer() {
                     { iconHtml }
                 </Row>
             </Row>
+            <br/>
         </Container>
     )
 }
