@@ -30,7 +30,7 @@ export default function Now() {
                 </Col>
             </Row>
             <p>This is my <a href="https://nownownow.com/about" target="_blank" rel="noopener noreferrer">now page</a>.</p>
-            <p>I'm current living in {nowData.location}.</p>
+            <p>I'm currently living in {nowData.location}.</p>
             <p>Here's what I'm focused on these days:</p>
             {fociHtml}
             <p className="last-updated">Last Updated {lastUpdated}</p>
