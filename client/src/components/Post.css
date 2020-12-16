@@ -1,0 +1,17 @@
+.post-content > h1,
+.post-content > h2 {
+  text-align: left;
+}
+
+.post-content > h2 {
+    margin-top: 1em !important;
+}
+
+.post-content > p {
+    text-align: justify
+}
+
+.post-content > p > img {
+    max-width: 100%;
+    height: auto;
+}
