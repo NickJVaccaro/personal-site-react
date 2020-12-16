@@ -19,15 +19,13 @@ export default function Blog () {
             <Row>
                 <Col>
                     <h1>Blog</h1>
-                    <p className="subheader">
-                        Where I write about tech & games
-                    </p>
+                    <p className="subheader">Where I write about tech & games</p>
                     <hr/>
                 </Col>
             </Row>
             {posts.map(post => 
                 <Row key={post.title} className="post-row">
-                    <Col lg={3}>
+                    <Col md={3} sm={12}>
                         <img className="post-image" src={post.excerpt_image} alt={post.image_alt} />
                     </Col>
                     <Col>
