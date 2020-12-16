@@ -19,6 +19,9 @@ export default function Blog () {
             <Row>
                 <Col>
                     <h1>Blog</h1>
+                    <p className="subheader">
+                        Where I write about tech & games
+                    </p>
                     <hr/>
                 </Col>
             </Row>
