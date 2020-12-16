@@ -4,14 +4,16 @@ import { Link } from 'react-router-dom';
 
 export default function TopNav() {
     return (
-        <Navbar bg="light" expand="lg" variant="light">
-            <Link to="/about"><Navbar.Brand>Nick Vaccaro</Navbar.Brand></Link>
-            <Nav>
-                <Link to="/about" className="nav-link">About</Link>
-                {/* <Link to="/projects" className="nav-link">Projects</Link> */}
-                <Link to="/blog" className="nav-link">Blog</Link>
-                <Link to="/now" className="nav-link">Now</Link>
-            </Nav>
+        <Navbar bg="dark" expand="lg" variant="dark" collapseOnSelect>
+            <Navbar.Brand as={Link} to="/about">Nick Vaccaro</Navbar.Brand>
+            <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+            <Navbar.Collapse id="responsive-navbar-nav">
+                <Nav>
+                    <Nav.Link as={Link} to="/about" href="/about" className="nav-link">About</Nav.Link>
+                    <Nav.Link as={Link} to="/blog" href="/blog" className="nav-link">Blog</Nav.Link>
+                    <Nav.Link as={Link} to="/now" href="/now" className="nav-link">Now</Nav.Link>
+                </Nav>
+            </Navbar.Collapse>
         </Navbar>
     )
 }
