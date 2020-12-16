@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { getBlogPost, calculateReadingTime } from '../actions/blogActions';
 import { useParams } from 'react-router-dom';
 
+import './Blog.css';
 import './Post.css';
 
 let md = require('markdown-it')();
