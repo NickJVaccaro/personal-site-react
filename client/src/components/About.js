@@ -7,10 +7,10 @@ import './About.css';
 export default function Home() {
     let expertises = [
         { key: 'Languages', value: 'JavaScript, C#, SQL, Java, CSS' },
-        { key: 'Frameworks', value: 'React, Node, React Native, .NET/Core, Angular' },
-        { key: 'Code Tools', value: 'Unity3D, AWS, Git, IIS, Docker' },
+        { key: 'Frameworks', value: 'ReactJS, React Native, NodeJS, .NET/Core, Angular' },
+        { key: 'Code Tools', value: 'Unity3D, AWS, IBM Cloud, Git, Docker' },
         { key: 'Databases', value: 'MySQL, MariaDB, Postgres' },
-        { key: 'Project Tools', value: 'Asana, Slack, Trello, MediaWiki' }
+        { key: 'Project Tools', value: 'Asana, Slack, Miro, Figma' }
     ];
 
     const expertiseHtml = expertises.map((expertise) => 
@@ -46,7 +46,7 @@ export default function Home() {
                     <div className="about-info">
                         <a href="mailto:njvaccaro0@gmail.com">njvaccaro0@gmail.com</a>
                         <br/>
-                        {/* <a href="assets/NickVaccaroResume.pdf" target="_blank">View Resume</a> */}
+                        <a href="assets/NickVaccaroResume.pdf" target="_blank">View Resume</a>
                     </div>
                 </Col>
             </Row>
