@@ -1,0 +1,25 @@
+.nav-tabs {
+    font-size: 1.5rem;
+}
+
+.nav-tabs > .nav-item {
+    padding-left: 3rem;
+    padding-right: 3rem;
+    color: #343a40;
+    border: 1px solid rgba(0, 0, 0, .1) !important;
+    border-bottom: none!important;
+}
+
+.nav-tabs > .nav-item.active {
+    background-color: #343a40!important;
+    color: white!important;
+    border: none!important;
+}
+
+.tab-container {
+    margin-top: 1rem;
+}
+
+.project-row {
+    margin-top: 2rem;
+}

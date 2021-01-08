@@ -17,9 +17,11 @@ import Now from './components/Now';
 import Blog from './components/Blog';
 import Post from './components/Post';
 import Footer from './components/Footer';
+import Projects from './components/Projects';
 
 const setAxios = () => {
   axios.defaults.baseURL = 'https://server.nickvaccaro.com';
+  // axios.defaults.baseURL = 'http://localhost:3000';
 }
 setAxios();
 
@@ -31,7 +33,7 @@ function App() {
           <TopNav/>
           <Switch>
             <Route path="/about"><About /></Route>
-            {/* <Route path="/projects"></Route> */}
+            <Route path="/projects"><Projects /></Route>
             <Route path="/blog"><Blog /></Route>
             <Route path="/now"><Now /></Route>
             <Route path="/post/:id"><Post /></Route>

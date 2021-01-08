@@ -6,5 +6,4 @@ export const getNowData = async (dispatch) => {
         type: 'GET_NOW',
         payload: res.data
     });
-    console.log(res.data);
 }
