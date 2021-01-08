@@ -20,8 +20,8 @@ import Footer from './components/Footer';
 import Projects from './components/Projects';
 
 const setAxios = () => {
-  // axios.defaults.baseURL = 'https://server.nickvaccaro.com';
-  axios.defaults.baseURL = 'http://localhost:3000';
+  axios.defaults.baseURL = 'https://server.nickvaccaro.com';
+  // axios.defaults.baseURL = 'http://localhost:3000';
 }
 setAxios();
 
