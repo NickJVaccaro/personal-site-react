@@ -18,16 +18,16 @@ export default function Projects() {
             <>
             {projects.map(project =>
                 project.type === type &&
-                <div>
+                <div key={project.id}>
                     <hr/>
-                    <Row key={project.title} className="project-row">
+                    <Row className="project-row">
                         <Col md={3} sm={12}>
                             <img className="post-image" src={project.image} alt="" />
                         </Col>
                         <Col>
                             <a href={project.link} target="_blank" rel="noopener noreferrer" className="post-title">{project.title}</a>
-                            {project.description.map(paragraph =>
-                                <p>{paragraph}</p>
+                            {project.description.map((paragraph, index) =>
+                                <p key={index}>{paragraph}</p>
                             )}
                             <p><strong>Tech/Tools:</strong> {project.stack}</p>
                         </Col>
