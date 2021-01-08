@@ -11,6 +11,7 @@ export default function TopNav() {
                 <Nav>
                     <Nav.Link as={Link} to="/about" href="/about" className="nav-link">About</Nav.Link>
                     <Nav.Link as={Link} to="/blog" href="/blog" className="nav-link">Blog</Nav.Link>
+                    <Nav.Link as={Link} to="/projects" href="/projects" className="nav-link">Projects</Nav.Link>
                     <Nav.Link as={Link} to="/now" href="/now" className="nav-link">Now</Nav.Link>
                 </Nav>
             </Navbar.Collapse>

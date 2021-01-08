@@ -28,3 +28,15 @@ CREATE TABLE `posts` (
 
 INSERT INTO `posts` VALUES (1, 'Sample Post', '# This is a sample post!', 'And this is the excerpt', 'https://i.imgur.com/JDMpAi1.jpg', 'Image for sample post', CURRENT_TIMESTAMP-100000000);
 INSERT INTO `posts` VALUES (2, 'Second Post', '# This is a second post', 'Here is an excerpt', NULL, NULL, CURRENT_TIMESTAMP);
+
+DROP TABLE IF EXISTS `projects`;
+CREATE TABLE `projects` (
+	`id` MEDIUMINT(9) NOT NULL AUTO_INCREMENT,
+	`title` VARCHAR(100) NOT NULL,
+	`link` VARCHAR(150) DEFAULT NULL,
+	`description` LONGTEXT NOT NULL,
+	`image` LONGTEXT DEFAULT NULL,
+	`stack` LONGTEXT DEFAULT NULL,
+	`type` VARCHAR(100),
+	PRIMARY KEY (`id`)
+);
