@@ -17,5 +17,9 @@
 }
 
 .tab-container {
+    margin-top: 1rem;
+}
+
+.project-row {
     margin-top: 2rem;
 }

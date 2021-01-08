@@ -18,18 +18,21 @@ export default function Projects() {
             <>
             {projects.map(project =>
                 project.type === type &&
-                <Row key={project.title} className="post-row">
-                    <Col md={3} sm={12}>
-                        <img className="post-image" src={project.image} alt="" />
-                    </Col>
-                    <Col>
-                        <a href={project.link} target="_blank" rel="noopener noreferrer" className="post-title">{project.title}</a>
-                        {project.description.map(paragraph =>
-                            <p>{paragraph}</p>
-                        )}
-                        <p><strong>Tech Stack:</strong> {project.stack}</p>
-                    </Col>
-                </Row>
+                <div>
+                    <hr/>
+                    <Row key={project.title} className="project-row">
+                        <Col md={3} sm={12}>
+                            <img className="post-image" src={project.image} alt="" />
+                        </Col>
+                        <Col>
+                            <a href={project.link} target="_blank" rel="noopener noreferrer" className="post-title">{project.title}</a>
+                            {project.description.map(paragraph =>
+                                <p>{paragraph}</p>
+                            )}
+                            <p><strong>Tech/Tools:</strong> {project.stack}</p>
+                        </Col>
+                    </Row>
+                </div>
             )}
             </>
         )
@@ -41,15 +44,20 @@ export default function Projects() {
                 <Col>
                     <h1>Projects</h1>
                     <p className="subheader">List of projects I've worked on.</p>
-                    <hr/>
                 </Col>
             </Row>
             <Tabs defaultActiveKey="software" id="projects-tabs" className="tabs">
                 <Tab eventKey="software" title="Software" className="tab-container">
+                    <p>General software projects I've worked on.</p>
                     {getProjectsRender('software')}
                 </Tab>
                 <Tab eventKey="gamedev" title="Gamedev" className="tab-container">
+                    <p>List of games I've developed. For the full list, check out <a href="https://synersteel.com" target="_blank" rel="noopener noreferrer">synersteel.com</a>.</p>
                     {getProjectsRender('gamedev')}
+                </Tab>
+                <Tab eventKey="hobbies" title="Hobbies" className="tab-container">
+                    <p>List of my more significant hobby projects, many of which do not involve any coding at all.</p>
+                    {getProjectsRender('hobby')}
                 </Tab>
             </Tabs>
             
