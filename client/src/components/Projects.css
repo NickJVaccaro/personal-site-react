@@ -20,6 +20,13 @@
     margin-top: 1rem;
 }
 
+@media only screen and (max-width: 768px) {
+    .nav-tabs > .nav-item {
+        width: 100%;
+        text-align: center;
+    }
+}
+
 .project-row {
     margin-top: 2rem;
 }
