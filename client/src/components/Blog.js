@@ -14,6 +14,26 @@ export default function Blog () {
         getBlogPosts(dispatch);
     }, [dispatch]);
 
+    const getPostLink = (post) => {
+        let link;
+        if(post.is_external) {
+            link = <a href={post.content} target="_blank" rel="noreferrer noopener" className="post-title">{post.title}</a>
+        } else {
+            link = <Link to={`post/${post.id}`} className="post-title">{post.title}</Link>
+        }
+        return link;
+    }
+
+    const getMetadata = (post) => {
+        let metaData;
+        if(post.is_external) {
+            metaData = <>External Post</>
+        } else {
+            metaData = <>Reading Time: {calculateReadingTime(post.content)}</>
+        }
+        return metaData;
+    }
+
     return(
         <Container>
             <Row>
@@ -29,10 +49,9 @@ export default function Blog () {
                         <img className="post-image" src={post.excerpt_image} alt={post.image_alt} />
                     </Col>
                     <Col>
-                        <Link to={'post/' + post.id} className="post-title">{post.title}</Link>
+                        {getPostLink(post)}
                         <p className="post-date">
-                            Reading Time: {calculateReadingTime(post.content)} ·
-                            Published: {new Date(post.date).toLocaleDateString()}
+                            Published: {new Date(post.date).toLocaleDateString()} · {getMetadata(post)}
                         </p>
                         <p className="post-excerpt">{post.excerpt}</p>
                     </Col>
