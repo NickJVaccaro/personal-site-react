@@ -1,6 +1,7 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Container, Row, Col, Tabs, Tab } from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
+import { useParams } from 'react-router-dom';
 import { getProjects } from '../actions/projectsActions';
 
 import './Projects.css';
@@ -8,10 +9,27 @@ import './Projects.css';
 export default function Projects() {
     const projects = useSelector(state => state.projects);
     const dispatch = useDispatch();
+    const { tab } = useParams();
+    const [tabKey, setTabKey] = useState('software');
 
     useEffect(() => {
         getProjects(dispatch);
     }, [dispatch]);
+
+    useEffect(() => {
+        if(tab) {
+            setTabKey(tab);
+        } else {
+            // If there's no tab param, that means they navigated directly to /projects, so
+            // put them on /projects/software. Make sure to account for a trailing / though.
+            let currentUrl = window.location.href;
+            if(currentUrl.endsWith('/')) {
+                currentUrl = currentUrl.substring(0, currentUrl.length - 1);
+            }
+            window.history.replaceState({}, '', currentUrl + '/software');
+            setTabKey('software');
+        }
+    }, [tab]);
 
     const getProjectsRender = (type) => {
         return (
@@ -38,6 +56,11 @@ export default function Projects() {
         )
     }
 
+    const selectTab = (key) => {
+        window.history.pushState({}, '', window.location.href.replace(tabKey, key));
+        setTabKey(key);
+    }
+
     return(
         <Container>
             <Row>
@@ -46,7 +69,7 @@ export default function Projects() {
                     <p className="subheader">List of projects I've worked on.</p>
                 </Col>
             </Row>
-            <Tabs defaultActiveKey="software" id="projects-tabs" className="tabs">
+            <Tabs activeKey={tabKey} id="projects-tabs" className="tabs" onSelect={(key) => selectTab(key)}>
                 <Tab eventKey="software" title="Software" className="tab-container">
                     <p>General software projects I've worked on.</p>
                     {getProjectsRender('software')}
@@ -60,7 +83,6 @@ export default function Projects() {
                     {getProjectsRender('hobby')}
                 </Tab>
             </Tabs>
-            
         </Container>
     )
 }
