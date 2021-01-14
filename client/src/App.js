@@ -33,7 +33,7 @@ function App() {
           <TopNav/>
           <Switch>
             <Route path="/about"><About /></Route>
-            <Route path="/projects"><Projects /></Route>
+            <Route path="/projects/:tab?"><Projects /></Route>
             <Route path="/blog"><Blog /></Route>
             <Route path="/now"><Now /></Route>
             <Route path="/post/:id"><Post /></Route>
