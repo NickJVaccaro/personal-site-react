@@ -28,7 +28,7 @@ export default function Post () {
         <Container>
             <Row>
                 <Col>
-                    <h1>{post.title}</h1>
+                    <h1 className="page-header">{post.title}</h1>
                     <p className="text-center post-date">
                         Reading Time: {calculateReadingTime(post.content)} · 
                         Published: {new Date(post.date).toLocaleDateString()}

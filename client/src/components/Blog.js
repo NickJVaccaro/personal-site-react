@@ -4,6 +4,8 @@ import {Container, Row, Col} from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
 import { getBlogPosts, calculateReadingTime } from '../actions/blogActions';
 
+import Footer from './Footer.js';
+
 import './Blog.css';
 
 export default function Blog () {
@@ -38,17 +40,19 @@ export default function Blog () {
         <Container>
             <Row>
                 <Col>
-                    <h1>Blog</h1>
-                    <p className="subheader">Where I write about tech & games</p>
-                    <hr/>
+                    <div className="page-header">
+                        <h1>Blog</h1>
+                    </div>
+                    <hr className="header-hr"/>
                 </Col>
             </Row>
             {posts.map(post => 
                 <Row key={post.title} className="post-row">
-                    <Col md={3} sm={12}>
+                    <Col md={1}/>
+                    <Col md={2} sm={12}>
                         <img className="post-image" src={post.excerpt_image} alt={post.image_alt} />
                     </Col>
-                    <Col>
+                    <Col md={8} className="blog-text-col">
                         {getPostLink(post)}
                         <p className="post-date">
                             Published: {new Date(post.date).toLocaleDateString()} · {getMetadata(post)}
@@ -57,6 +61,7 @@ export default function Blog () {
                     </Col>
                 </Row>
             )}
+            <Footer />
         </Container>
     )
 }

@@ -1,5 +1,34 @@
+@import url('https://fonts.googleapis.com/css2?family=Metamorphous&family=Open+Sans:wght@300;500;600&display=swap');
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
+}
+
+b {
+  font-weight: 500;
+}
+
 body, h1, h2, p, li {
   color: #555;
+}
+
+h1 {
+  font-family: 'Metamorphous', serif;
+}
+
+.page-header {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.header-with-subheader {
+  padding-top: 20px;
+  padding-bottom: 10px;
+}
+
+.header-hr {
+  margin-bottom: 32px;
 }
 
 h1, h2 {
@@ -9,7 +38,15 @@ h1, h2 {
 }
 
 body, p, li {
-  font-size: 1.3em;
+  font-size: 18px;
+}
+
+a {
+  color: #a739ff;
+}
+
+a:hover {
+  color: #cd18db;
 }
 
 ul {

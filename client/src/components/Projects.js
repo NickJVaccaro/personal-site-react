@@ -1,48 +1,32 @@
-import React, { useEffect, useState } from 'react';
-import { Container, Row, Col, Tabs, Tab } from 'react-bootstrap';
+import React, { useEffect } from 'react';
+import { Container, Row, Col } from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
-import { useParams } from 'react-router-dom';
 import { getProjects } from '../actions/projectsActions';
+
+import Footer from './Footer.js';
 
 import './Projects.css';
 
 export default function Projects() {
     const projects = useSelector(state => state.projects);
     const dispatch = useDispatch();
-    const { tab } = useParams();
-    const [tabKey, setTabKey] = useState('software');
 
     useEffect(() => {
         getProjects(dispatch);
     }, [dispatch]);
 
-    useEffect(() => {
-        if(tab) {
-            setTabKey(tab);
-        } else {
-            // If there's no tab param, that means they navigated directly to /projects, so
-            // put them on /projects/software. Make sure to account for a trailing / though.
-            let currentUrl = window.location.href;
-            if(currentUrl.endsWith('/')) {
-                currentUrl = currentUrl.substring(0, currentUrl.length - 1);
-            }
-            window.history.replaceState({}, '', currentUrl + '/software');
-            setTabKey('software');
-        }
-    }, [tab]);
-
-    const getProjectsRender = (type) => {
+    const getRecentProjects = () => {
         return (
             <>
             {projects.map(project =>
-                project.type === type &&
+                project.is_recent == true &&
                 <div key={project.id}>
                     <hr/>
                     <Row className="project-row">
                         <Col md={3} sm={12}>
                             <img className="post-image" src={project.image} alt="" />
                         </Col>
-                        <Col>
+                        <Col className="blog-text-col">
                             <a href={project.link} target="_blank" rel="noopener noreferrer" className="post-title">{project.title}</a>
                             {project.description.map((paragraph, index) =>
                                 <p key={index}>{paragraph}</p>
@@ -56,33 +40,52 @@ export default function Projects() {
         )
     }
 
-    const selectTab = (key) => {
-        window.history.pushState({}, '', window.location.href.replace(tabKey, key));
-        setTabKey(key);
+    const getOtherProjects = () => {
+        return (
+            <>
+            <Row>
+                <Col>
+                    <table className="table table-sm table-striped projects-table">
+                        <tbody>
+                        {projects.map(project =>
+                            project.is_recent == false &&
+                            <tr>
+                                <td><a href={project.link} target="_blank" rel="noopener noreferrer">{project.title}</a></td>
+                                <td>{project.short_desc}</td>
+                                <td className="project-stack">{project.stack}</td>
+                            </tr>
+                        )}
+                        </tbody>
+                    </table>
+                </Col>
+            </Row>
+            </>
+        )
     }
 
     return(
         <Container>
             <Row>
                 <Col>
-                    <h1>Projects</h1>
-                    <p className="subheader">List of projects I've worked on.</p>
+                    <div className="header-with-subheader">
+                        <h1>Projects</h1>
+                        <p className="subheader">Games I'm actively working on</p>
+                    </div>
                 </Col>
             </Row>
-            <Tabs activeKey={tabKey} id="projects-tabs" className="tabs" onSelect={(key) => selectTab(key)}>
-                <Tab eventKey="software" title="Software" className="tab-container">
-                    <p>General software projects I've worked on.</p>
-                    {getProjectsRender('software')}
-                </Tab>
-                <Tab eventKey="gamedev" title="Gamedev" className="tab-container">
-                    <p>List of games I've developed. For the full list, check out <a href="https://synersteel.com" target="_blank" rel="noopener noreferrer">synersteel.com</a>.</p>
-                    {getProjectsRender('gamedev')}
-                </Tab>
-                <Tab eventKey="hobbies" title="Hobbies" className="tab-container">
-                    <p>List of my more significant hobby projects, many of which do not involve any coding at all.</p>
-                    {getProjectsRender('hobby')}
-                </Tab>
-            </Tabs>
+            <Row>
+                <Col>
+                    {getRecentProjects()}
+                    <hr/>
+                    <div className="header-with-subheader">
+                        <h2>Previous Projects</h2>
+                        <p className="subheader">Click to visit any project for more details</p>
+                    </div>
+                    <hr className="header-hr"/>
+                    {getOtherProjects()}
+                </Col>
+            </Row>
+            <Footer />
         </Container>
     )
 }

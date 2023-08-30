@@ -30,3 +30,12 @@
 .project-row {
     margin-top: 2rem;
 }
+
+.projects-table > tbody > tr > td {
+    border-top:none;
+}
+
+.project-stack {
+    font-size: 14px;
+    text-align: right;
+}

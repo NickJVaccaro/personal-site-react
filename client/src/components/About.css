@@ -23,8 +23,12 @@
 }
 
 .about-info {
-    margin: 30px;
-    font-size: 1.3em;
+    /*margin: 0px;*/
+    font-size: 1.1em;
+}
+
+.about-personal {
+    padding-top: 16px;
 }
 
 .about-info > p {
