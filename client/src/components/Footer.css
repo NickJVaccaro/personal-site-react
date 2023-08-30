@@ -9,7 +9,7 @@
 }
 
 .fa-email:hover {
-    color: #D44638;
+    color: #a739ff;
 }
 
 .fa-twitter:hover {
@@ -22,4 +22,13 @@
 
 .fa-github:hover {
     color: #000;
+}
+
+.fa-reddit:hover {
+    color: #FF5700;
+}
+
+.social-col {
+    padding-left: 8px;
+    padding-right: 8px;
 }

@@ -6,6 +6,8 @@ export const getProjects = async (dispatch) => {
     let projects = res.data;
     projects = projects.map(project => {
         project.description = JSON.parse(project.description);
+        if(project.type == 'gamedev')
+            project.type = 'game';
         return project;
     });
 

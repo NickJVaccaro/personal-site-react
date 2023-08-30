@@ -2,11 +2,13 @@ import React, { useState } from 'react';
 import { Navbar, Nav } from 'react-bootstrap';
 import { Link, useLocation } from 'react-router-dom';
 
+import './TopNav.css';
+
 export default function TopNav() {
     const location = useLocation();
 
     // Get the nav item that we should start with, on first page load.
-    // This is necessary because some pages, like the projects page, have additional data passed in
+    // This is necessary because some pages, like the blog page, have additional data passed in
     // that doesn't match up with the navItems list below.
     const getStartingNavItem = () => {
         // get rid of the starter /
@@ -22,7 +24,7 @@ export default function TopNav() {
 
     const [activeNav, setActiveNav] = useState(getStartingNavItem());
 
-    const navItems = ['about', 'blog', 'projects', 'now'];
+    const navItems = ['about', 'projects', 'blog', 'now'];
     const navLink = (item) => {
         return (
             <Nav.Link 
@@ -31,7 +33,6 @@ export default function TopNav() {
                 eventKey={item}
                 to={`/${item}`} 
                 href={`/${item}`} 
-                className="nav-link"
                 onSelect={() => selectNav(item)}>
                     {item.charAt(0).toUpperCase() + item.slice(1)}
             </Nav.Link>
