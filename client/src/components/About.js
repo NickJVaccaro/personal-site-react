@@ -40,13 +40,13 @@ export default function Home() {
                 <Col lg={8} md={12} className="about-content">
                     <p>Hi, I'm Nick!</p>
                     <p><b>I'm a professional programmer</b> with 11 years of experience, the last 3 of which I've worked on <a href="https://projectgorgon.com/" target="_blank" rel="noopener noreferrer">Project: Gorgon</a>, a live MMORPG built in Unity. Before that, I released 4 commercial games under my indie game studio <a href="https://synersteel.com/" target="_blank" rel="noopener noreferrer">Synersteel</a>, and worked as a Full-Stack Web Developer with everything from ASP.NET to React & Node.</p>
-                    <p><b>I'm used to small teams</b>, wearing many hats, with an affinity for the developing, project managing, and QA hats. <b>I'm focused on results</b>, and do whatever I can to help the entire team succeed.</p>
+                    <p><b>I'm used to small teams</b> and wearing many hats, with an affinity for the developing, project managing, and QA hats. <b>I'm focused on results</b>, and do whatever I can to help the entire team succeed.</p>
                     <p>You can see a list of my projects <Link to="/projects">here</Link>.</p>
                     <p>My expertise lies in:</p>
                     { expertiseHtml }
                 </Col>
                 <Col lg={4} md={12} className="text-center">
-                    <img src="/img/me512.jpg" className="figure-img img-fluid rounded border img-me" alt="Nick looking super serious"/>
+                    <img src="/img/me512.jpg" className="figure-img img-fluid rounded border img-me" alt="Nick looking pretty happy"/>
                     <div className="about-info">
                         <Footer />
                         <a href="assets/NickVaccaroResume.pdf" target="_blank">View Resume</a>
