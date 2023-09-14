@@ -9,7 +9,7 @@ import './About.css';
 export default function Home() {
     let expertises = [
         { key: 'Languages', value: 'C#, Java, SQL, JavaScript' },
-        { key: 'Databases', value: 'MySQL/MariaDB, Postgres, Oracle' },
+        { key: 'Databases', value: 'MySQL/MariaDB, MongoDB, Oracle' },
         { key: 'Code Tools', value: 'Unity3D, AWS, IBM Cloud, Git, SVN, Docker' },
         { key: 'Project Tools', value: 'Asana, Miro, Figma, Discord, Slack' },
         { key: 'Web Frameworks', value: 'ReactJS, React Native, NodeJS, .NET/Core' }
